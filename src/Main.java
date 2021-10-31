@@ -17,6 +17,7 @@ public class Main {
     String lastName = "Doe";
     char firstInitial = firstName.charAt(0);
     char lastInitial = lastName.charAt(0);
+    boolean isReset = true;
     // Strring concatination
     String fullName = firstName + " " + lastName;
 
@@ -27,21 +28,35 @@ public class Main {
     // Get some input from user
     // use the special Scanner type (needs to be imported)
     Scanner input = new Scanner(System.in);
-    System.out.println("Please update student GPA:");
-    // Save the answer to a variable
-    studentGPA = input.nextDouble();
-    // Close a stream
-    input.close();
+    // While loop
+    while(isReset) {
+      System.out.println("Reset GPA? Print no to exit without reset");
+      String userReset = input.next();
+
+      if (userReset.equals("no")) {
+        isReset = false;
+      } else {
+        System.out.println("Please update student GPA:");
+        // Save the answer to a variable
+        studentGPA = input.nextDouble();
+      }
+    }
 
     // Conditional statement
     if (studentGPA <= 3.5) {
+      // In Java we have block scoping (like in JS with let and const)
+      String blockScopedVar = "This var is available only inside if statement";
+      System.out.println(blockScopedVar);
       hasGoodMarks = false;
     }
 
     // Show updated info to a user
     System.out.println("Updated GPA: " + studentGPA);
     System.out.println(fullName + " has good marks: " + hasGoodMarks);
-
+   
+    // close stream
+    input.close();
+    System.out.println("Thank you for updating data");
     
   }
 }
