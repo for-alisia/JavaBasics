@@ -33,7 +33,8 @@ public class Main {
       System.out.println("Reset GPA? Print no to exit without reset");
       String userReset = input.next();
 
-      if (userReset.equals("no")) {
+      // Check the user's answer (not case sensitive with toLowerCase)
+      if (userReset.toLowerCase().equals("no")) {
         isReset = false;
       } else {
         System.out.println("Please update student GPA:");
