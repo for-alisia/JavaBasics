@@ -8,13 +8,14 @@ public class Square {
     double width = 0;
     double height = 0;
 
+    // In the loop set new width while it's not valid
     while(width <= 0) {
-      System.out.println("Provide a valid width:");
+      System.out.println("Provide a valid (more then zero) width:");
       width = input.nextDouble();
     }
-
+    // In the loop set new height while it's not valid
     while(height <= 0) {
-      System.out.println("Provide a valid height:");
+      System.out.println("Provide a valid (more then zero) height:");
       height = input.nextDouble();
     }
 
